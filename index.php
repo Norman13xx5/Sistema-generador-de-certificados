@@ -1,3 +1,11 @@
+<?php
+require_once("config/conexion.php");
+if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
+    require_once("models/Usuario.php");
+    $usuario = new Usuario();
+    $usuario->login();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -42,21 +50,23 @@
 <body>
 
     <div class="d-flex align-items-center justify-content-center bg-br-primary ht-100v">
+        <form action="" method="POST">
+            <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white rounded shadow-base">
+                <div class="signin-logo tx-center tx-28 tx-bold tx-inverse"><span class="tx-normal">[</span> Empresa de Jal <span class="tx-normal">]</span></div>
+                <div class="tx-center mg-b-30">The Admin Template For Perfectionist</div>
 
-        <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white rounded shadow-base">
-            <div class="signin-logo tx-center tx-28 tx-bold tx-inverse"><span class="tx-normal">[</span> Empresa de Jal <span class="tx-normal">]</span></div>
-            <div class="tx-center mg-b-30">The Admin Template For Perfectionist</div>
+                <div class="form-group">
+                    <input type="text" id="corre_usuario" name="corre_usuario" class="form-control" placeholder="Ingrese correo electronico">
+                </div><!-- form-group -->
+                <div class="form-group">
+                    <input type="password" id="contraseña_usuario" name="contraseña_usuario" class="form-control" placeholder="Ingrese contraseña">
+                </div><!-- form-group -->
+                <input type="hidden" name="enviar" class="form-control" value="si">
+                <button type="submit" class="btn btn-info btn-block">Aceder</button>
 
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Ingrese correo electronico">
-            </div><!-- form-group -->
-            <div class="form-group">
-                <input type="password" class="form-control" placeholder="Ingrese contraseña">
-            </div><!-- form-group -->
-            <button type="submit" class="btn btn-info btn-block">Aceder</button>
-
-            <div class="mg-t-30 tx-center"></div>
-        </div><!-- login-wrapper -->
+                <div class="mg-t-30 tx-center"></div>
+            </div><!-- login-wrapper -->
+        </form>
     </div><!-- d-flex -->
 
     <script src="public/lib/jquery/jquery.js"></script>
