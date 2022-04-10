@@ -1,3 +1,8 @@
+<?php
+/* Llamamos la conexión */
+include_once("../../config/conexion.php");
+if(isset($_SESSION["id_usuario"])){
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,10 +13,8 @@
 </head>
 
 <body>
-
     <?php include_once("../html/MainMenu.php"); ?>
     <?php include_once("../html/MainHeader.php"); ?>
-
     <div class="br-mainpanel">
         <div class="br-pageheader pd-y-15 pd-l-20">
             <nav class="breadcrumb pd-0 mg-0 tx-12">
@@ -22,17 +25,18 @@
             <h4 class="tx-gray-800 mg-b-5">Home</h4>
             <p class="mg-b-0">Pantalla Home</p>
         </div>
-
+        <!-- Contenido del proyecto -->
         <div class="br-pagebody">
-
             <!-- start you own content here -->
-
         </div><!-- br-pagebody -->
-
     </div>
-
-
     <?php include_once("../html/MianJS.php") ?>
 </body>
 
 </html>
+<?php
+/* Si no ha iniciado sesión, lo redirigirá a la ventana principal */
+}else{
+    header("Location:".Conectar::ruta()."view/404/index.php");
+}
+?>
