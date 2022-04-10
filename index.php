@@ -61,21 +61,21 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
                     switch ($_GET["m"]) {
                         case "1";
                 ?>
-                            <div class="alert alert-success" role="alert">
+                            <div class="alert alert-danger" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <strong class="d-block d-sm-inline-block-force">Error!</strong>Usuario y/o contraseña incorrecta
+                                <strong class="d-block d-sm-inline-block-force">Error!</strong> Usuario y/o contraseña incorrectas
                             </div><!-- alert -->
                         <?php
                             break;
                         case "2";
                         ?>
-                            <div class="alert alert-success" role="alert">
+                            <div class="alert alert-warning" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <strong class="d-block d-sm-inline-block-force">Error!</strong>Campos Vacios
+                                <strong class="d-block d-sm-inline-block-force">Error!</strong> Campos Vacios
                             </div><!-- alert -->
                 <?php
                             break;

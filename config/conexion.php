@@ -1,4 +1,7 @@
 <?php
+/* Inicializando la sesión del usuario */
+session_start();
+
 /* Iniciamos clase conectar */
 class Conectar
 {
@@ -22,7 +25,7 @@ class Conectar
         return $this->dbh->query("SET NAMES 'utf8'");
     }
     /* Ruta principal del proyecto */
-    public function ruta()
+    public static function ruta()
     {
         return "http://localhost/generador_certificados/";
     }
