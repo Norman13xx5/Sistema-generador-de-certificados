@@ -1,8 +1,11 @@
 <?php
+/* Llamando cadena de conexion */
 require_once("config/conexion.php");
 if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
     require_once("models/Usuario.php");
+    /* Inicializando la clase Usuario */
     $usuario = new Usuario();
+    /* Aqui llamamos la funcion login */
     $usuario->login();
 }
 ?>
@@ -37,7 +40,6 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
     <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
     <meta name="author" content="ThemePixels">
 
-    <title>Empresa de Jal</title>
 
     <!-- vendor css -->
     <link href="public/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -45,6 +47,7 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
 
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="public/css/bracket.css">
+    <title>Empresa de Jal</title>
 </head>
 
 <body>
@@ -52,6 +55,33 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
     <div class="d-flex align-items-center justify-content-center bg-br-primary ht-100v">
         <form action="" method="POST">
             <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white rounded shadow-base">
+                <!-- Aquí están las alertas de por si están vacios o incorrectos los campos -->
+                <?php
+                if (isset($_GET["m"])) {
+                    switch ($_GET["m"]) {
+                        case "1";
+                ?>
+                            <div class="alert alert-success" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong class="d-block d-sm-inline-block-force">Error!</strong>Usuario y/o contraseña incorrecta
+                            </div><!-- alert -->
+                        <?php
+                            break;
+                        case "2";
+                        ?>
+                            <div class="alert alert-success" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong class="d-block d-sm-inline-block-force">Error!</strong>Campos Vacios
+                            </div><!-- alert -->
+                <?php
+                            break;
+                    }
+                }
+                ?>
                 <div class="signin-logo tx-center tx-28 tx-bold tx-inverse"><span class="tx-normal">[</span> Empresa de Jal <span class="tx-normal">]</span></div>
                 <div class="tx-center mg-b-30">The Admin Template For Perfectionist</div>
 

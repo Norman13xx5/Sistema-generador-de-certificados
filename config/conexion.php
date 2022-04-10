@@ -24,6 +24,6 @@ class Conectar
     /* Ruta principal del proyecto */
     public function ruta()
     {
-        return "http://localhost/generador_certificados/index.php";
+        return "http://localhost/generador_certificados/";
     }
 }
