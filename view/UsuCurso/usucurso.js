@@ -8,16 +8,13 @@ $(document).ready(function () {
             'excelHtml5',
             'csvHtml5',
             'pdf'
-            /*      ],
-                 "ajax": {
-                     url: '../../controller/producto.php?op=listar',
-                     type: "get",
-                     dataType: "json",
-                     error: function (e) {
-                         console.log(e.responseText);
-                     }
-                 }, */
+         /* Aquí llamamos del controlador los datos que queremos pintar en la datatable */
         ],
+        "ajax": {
+            url: "../../controller/usuario.php?op=listar_cursos",
+            type: "post",
+            data: {id_usuario:1},
+        }, 
         "bDestroy": true,
         "responsive": true,
         "bInfo": true,

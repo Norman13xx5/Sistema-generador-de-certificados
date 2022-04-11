@@ -1,6 +1,6 @@
 <?php
 /* Llamando cadena de conexion */
-require_once("config/conexion.php");
+require_once("../config/conexion.php");
 /* Llamando a la clase */
 require_once("../models/Usuario.php");
 /* Inicializando Clase */
