@@ -1,4 +1,4 @@
 # Sistema-generador-de-certificados
-generador_certificados
 
-Sistema con inicio se sesiones, con panel de perfil, panel de certificados, generador de certificados
+
+Sistema con inicio se sesiones, panel de perfil, panel de certificados, generador de certificados
