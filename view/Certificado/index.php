@@ -24,7 +24,7 @@
     </div><!-- ht-100v -->
 
     <?php include_once("../html/MianJS.php") ?>
-
+    <script type="text/javascript" src="certificado.js"></script>
 </body>
 
 </html>

@@ -45,3 +45,7 @@ $(document).ready(function () {
         },
     });
 });
+
+function certificado(id_curso_detalle){
+    window.open('../Certificado/index.php?id_curso_detalle='+ id_curso_detalle +'','_blank');
+}
