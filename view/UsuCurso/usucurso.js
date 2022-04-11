@@ -7,7 +7,6 @@ $(document).ready(function () {
             'copyHtml5',
             'excelHtml5',
             'csvHtml5',
-            'pdf'
          /* Aquí llamamos del controlador los datos que queremos pintar en la datatable */
         ],
         "ajax": {
