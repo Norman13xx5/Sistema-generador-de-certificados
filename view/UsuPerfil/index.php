@@ -1,3 +1,8 @@
+<?php
+/* Llamamos la conexión */
+include_once("../../config/conexion.php");
+if(isset($_SESSION["id_usuario"])){
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -36,3 +41,9 @@
 </body>
 
 </html>
+<?php
+/* Si no ha iniciado sesión, lo redirigirá a la ventana principal */
+}else{
+    header("Location:".Conectar::ruta()."view/404/index.php");
+}
+?>

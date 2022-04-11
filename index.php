@@ -47,7 +47,7 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
 
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="public/css/bracket.css">
-    <title>Empresa de Jal</title>
+    <title>Empresa</title>
 </head>
 
 <body>
@@ -82,7 +82,7 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
                     }
                 }
                 ?>
-                <div class="signin-logo tx-center tx-28 tx-bold tx-inverse"><span class="tx-normal">[</span> Empresa de Jal <span class="tx-normal">]</span></div>
+                <div class="signin-logo tx-center tx-28 tx-bold tx-inverse"><span class="tx-normal">[</span> Empresa <span class="tx-normal">]</span></div>
                 <div class="tx-center mg-b-30">The Admin Template For Perfectionist</div>
 
                 <div class="form-group">
