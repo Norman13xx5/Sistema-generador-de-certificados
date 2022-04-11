@@ -66,4 +66,35 @@ class Usuario extends Conectar
         $sql->execute();
         return $resultado=$sql->fetchAll();
     }
+
+        /* Mostrar todos los datos de un curso por su id de detalle */
+        public function get_curso_x_id_detalle($id_curso_detalle)
+        {
+            $conectar = parent::conexion();
+            parent::set_name();
+            $sql = "SELECT 
+            td_curso_usuario.id_curso_detalle,
+            tm_curso.id_curso,
+            tm_curso.nombre_curso,
+            tm_curso.descripcion_curso,
+            tm_curso.fecha_inicio_curso,
+            tm_curso.fecha_final_curso,
+            tm_usuario.id_usuario,
+            tm_usuario.nombre_usuario,
+            tm_usuario.apellido_paterno,
+            tm_usuario.apellido_materno,
+            tm_instructor.id_instrutor,
+            tm_instructor.instrutor_nombre,
+            tm_instructor.apellido_paterno,
+            tm_instructor.apellido_materno
+            FROM td_curso_usuario INNER JOIN 
+            tm_curso ON td_curso_usuario.id_curso = tm_curso.id_curso INNER JOIN
+            tm_usuario ON td_curso_usuario.id_usuario = tm_usuario.id_usuario INNER JOIN
+            tm_instructor ON tm_curso.id_instrutor =tm_instructor.id_instrutor
+            WHERE td_curso_usuario.id_curso_detalle = ?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $id_curso_detalle);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
 }
