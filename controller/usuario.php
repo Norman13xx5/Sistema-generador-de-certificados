@@ -16,7 +16,7 @@ switch ($_GET["op"]) {
             $sub_array[] = $row["nombre_curso"];
             $sub_array[] = $row["fecha_inicio_curso"];
             $sub_array[] = $row["fecha_final_curso"];
-            $sub_array[] = $row["instrutor_nombre"] . "" . $row["apellido_paterno"];
+            $sub_array[] = $row["instrutor_nombre"] . " " . $row["apellido_paterno"];
             $sub_array[] = '<button type="button" onClick="certificado(' . $row["id_curso_detalle"] . ');" id="' . $row["id_curso_detalle"] . '" class="btn btn-outline-primary btn-ico"><div><i class="fa fa-graduation-cap"></i></div></button>';
             $data[] = $sub_array;
         }
