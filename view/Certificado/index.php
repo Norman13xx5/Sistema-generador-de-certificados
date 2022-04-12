@@ -12,7 +12,7 @@
     <div class="ht-100v d-flex align-items-center justify-content-center">
         <div class="wd-lg-70p wd-xl-50p tx-center pd-x-40">
             <h1 class="tx-100 tx-xs-140 tx-normal tx-inverse tx-roboto mg-b-0">
-                <canvas id="myCanvas" height="100px" width="100px" class="img-fluid" alt="Responsive image"></canvas>
+                <canvas id="myCanvas" height="600px" width="800px" class="img-fluid" alt="Responsive image"></canvas>
                 <!-- <img src="../../public/img/certificado.png" > -->
             </h1>
             <br></br>
