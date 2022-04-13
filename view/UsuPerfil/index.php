@@ -84,7 +84,7 @@ if (isset($_SESSION["id_usuario"])) {
                         </div><!-- row -->
 
                         <div class="form-layout-footer">
-                            <button class="btn btn-info">Actualizar</button>
+                            <button class="btn btn-info" id="btn_actualizar_perfil_usuario">Actualizar</button>
                         </div><!-- form-layout-footer -->
                     </div><!-- form-layout -->
 

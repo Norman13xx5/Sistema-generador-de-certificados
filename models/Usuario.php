@@ -107,7 +107,7 @@ class Usuario extends Conectar
         $sql->execute();
         return $resultado = $sql->fetchAll();
     }
-    /* Monstrar los datos del usuario segun el id */
+    /* Monstrar los datos del usuario en el index de perfil */
     public function get_usuario_x_id($id_usuario)
     {
         $conectar = parent::conexion();
@@ -115,6 +115,32 @@ class Usuario extends Conectar
         $sql = "SELECT * FROM tm_usuario WHERE estado=1 AND id_usuario=?";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $id_usuario);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
+    /* Actualizar perfil del usuario */
+    public function update_usuario_perfil($id_usuario, $nombre_usuario, $apellido_paterno, $apellido_materno, $pass_usuario, $sexo_usuario, $telefono_usuario)
+    {
+        $conectar = parent::conexion();
+        parent::set_name();
+        $sql = "UPDATE tm_usuario
+                SET
+                    nombre_usuario = ?,
+                    apellido_paterno = ?,
+                    apellido_materno = ?,
+                    pass_usuario = ?,
+                    sexo_usuario = ?,
+                    telefono_usuario = ?
+                WHERE 
+                    id_usuario = ?";
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $nombre_usuario);
+        $sql->bindValue(2, $apellido_paterno);
+        $sql->bindValue(3, $apellido_materno);
+        $sql->bindValue(4, $pass_usuario);
+        $sql->bindValue(5, $sexo_usuario);
+        $sql->bindValue(6, $telefono_usuario);
+        $sql->bindValue(7, $id_usuario);
         $sql->execute();
         return $resultado = $sql->fetchAll();
     }

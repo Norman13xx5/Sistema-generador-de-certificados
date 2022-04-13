@@ -13,3 +13,22 @@ $(document).ready(function () {
         $('#telefono_usuario').val(data.telefono_usuario);
     });
 });
+
+$(document).on("click", "#btn_actualizar_perfil_usuario", function () {
+    $.post("../../controller/usuario.php?op=actualizar_perfil_usuario", {
+        id_usuario: id_usuario,
+        nombre_usuario: $('#nombre_usuario').val(),
+        apellido_paterno: $('#apellido_paterno').val(),
+        apellido_materno: $('#apellido_materno').val(),
+        pass_usuario: $('#pass_usuario').val(),
+        sexo_usuario: $('#sexo_usuario').val(),
+        telefono_usuario: $('#telefono_usuario').val()
+    }, function (data) {
+    });
+    Swal.fire({
+        title: 'Correcto!',
+        text: 'Se Actualizó Correctamente',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+    })
+});

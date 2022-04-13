@@ -78,9 +78,20 @@ switch ($_GET["op"]) {
                 $output["pass_usuario"] = $row["pass_usuario"];
                 $output["sexo_usuario"] = $row["sexo_usuario"];
                 $output["telefono_usuario"] = $row["telefono_usuario"];
-                
             }
             echo json_encode($output);
         }
+        break;
+        /* Actualizar datos del perfil del usuario */
+    case "actualizar_perfil_usuario":
+        $usuario->update_usuario_perfil(
+            $_POST["id_usuario"],
+            $_POST["nombre_usuario"],
+            $_POST["apellido_paterno"],
+            $_POST["apellido_materno"],
+            $_POST["pass_usuario"],
+            $_POST["sexo_usuario"],
+            $_POST["telefono_usuario"]
+        );
         break;
 }
