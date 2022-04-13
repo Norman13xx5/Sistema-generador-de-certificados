@@ -61,18 +61,18 @@ class Usuario extends Conectar
         tm_usuario ON td_curso_usuario.id_usuario = tm_usuario.id_usuario INNER JOIN
         tm_instructor ON tm_curso.id_instrutor =tm_instructor.id_instrutor
         WHERE td_curso_usuario.id_usuario = ?";
-        $sql=$conectar->prepare($sql);
+        $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $id_usuario);
         $sql->execute();
-        return $resultado=$sql->fetchAll();
+        return $resultado = $sql->fetchAll();
     }
 
-        /* Mostrar todos los datos de un curso por su id de detalle */
-        public function get_curso_x_id_detalle($id_curso_detalle)
-        {
-            $conectar = parent::conexion();
-            parent::set_name();
-            $sql = "SELECT 
+    /* Mostrar todos los datos de un curso por su id de detalle */
+    public function get_curso_x_id_detalle($id_curso_detalle)
+    {
+        $conectar = parent::conexion();
+        parent::set_name();
+        $sql = "SELECT 
             td_curso_usuario.id_curso_detalle,
             tm_curso.id_curso,
             tm_curso.nombre_curso,
@@ -92,9 +92,20 @@ class Usuario extends Conectar
             tm_usuario ON td_curso_usuario.id_usuario = tm_usuario.id_usuario INNER JOIN
             tm_instructor ON tm_curso.id_instrutor =tm_instructor.id_instrutor
             WHERE td_curso_usuario.id_curso_detalle = ?";
-            $sql=$conectar->prepare($sql);
-            $sql->bindValue(1, $id_curso_detalle);
-            $sql->execute();
-            return $resultado=$sql->fetchAll();
-        }
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $id_curso_detalle);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
+    /* Cantidad de Cursos por Usuario */
+    public function get_total_cursos_x_usuario($id_usuario)
+    {
+        $conectar = parent::conexion();
+        parent::set_name();
+        $sql = "SELECT COUNT(*) AS total FROM td_curso_usuario WHERE id_usuario=?";
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $id_usuario);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
 }
