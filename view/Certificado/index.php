@@ -24,7 +24,7 @@
         </div>
     </div><!-- ht-100v -->
 
-    <?php include_once("../html/MianJS.php") ?>
+    <?php require_once("../html/MianJS.php") ?>
     <!-- Librería para descargar en pdf -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
     <script type="text/javascript" src="certificado.js"></script>

@@ -66,7 +66,6 @@ class Usuario extends Conectar
         $sql->execute();
         return $resultado = $sql->fetchAll();
     }
-
     /* Mostrar todos los datos de un curso por su id de detalle */
     public function get_curso_x_id_detalle($id_curso_detalle)
     {
@@ -103,6 +102,17 @@ class Usuario extends Conectar
         $conectar = parent::conexion();
         parent::set_name();
         $sql = "SELECT COUNT(*) AS total FROM td_curso_usuario WHERE id_usuario=?";
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $id_usuario);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
+    /* Monstrar los datos del usuario segun el id */
+    public function get_usuario_x_id($id_usuario)
+    {
+        $conectar = parent::conexion();
+        parent::set_name();
+        $sql = "SELECT * FROM tm_usuario WHERE estado=1 AND id_usuario=?";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $id_usuario);
         $sql->execute();

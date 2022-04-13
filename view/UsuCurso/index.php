@@ -56,7 +56,7 @@ if (isset($_SESSION["id_usuario"])) {
         </div>
 
 
-        <?php include_once("../html/MianJS.php") ?>
+        <?php require_once("../html/MianJS.php") ?>
         <script type="text/javascript" src="usucurso.js"></script>
     </body>
 

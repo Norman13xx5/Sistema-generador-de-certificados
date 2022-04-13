@@ -18,7 +18,7 @@
             </div><!-- d-flex -->
         </div>
     </div><!-- ht-100v -->
-    <?php include_once("../html/MianJS.php") ?>
+    <?php require_once("../html/MianJS.php") ?>
 </body>
 
 </html>

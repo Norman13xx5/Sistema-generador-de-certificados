@@ -31,7 +31,7 @@ switch ($_GET["op"]) {
 
         break;
         /*       Microservicio para mostrar informacion del certificado con el id_curso_detalle */
-    case "mostrar_curso_datellate":
+    case "mostrar_curso_datalle":
         $datos = $usuario->get_curso_x_id_detalle($_POST["id_curso_detalle"]);
         /* Aquí validad si es un array si es igual a true y si es diferente a 0 */
         if (is_array($datos) == true and count($datos) <> 0) {
@@ -56,11 +56,29 @@ switch ($_GET["op"]) {
         }
         break;
     case "total":
-        $datos=$usuario->get_total_cursos_x_usuario($_POST["id_usuario"]);
-        if(is_array($datos)==true and count($datos)>0){
-            foreach($datos as $row)
-            {
+        $datos = $usuario->get_total_cursos_x_usuario($_POST["id_usuario"]);
+        if (is_array($datos) == true and count($datos) > 0) {
+            foreach ($datos as $row) {
                 $output["total"] = $row["total"];
+            }
+            echo json_encode($output);
+        }
+        break;
+
+    case "mostrar_informacion_usuario":
+        $datos = $usuario->get_usuario_x_id($_POST["id_usuario"]);
+        /* Aquí validad si es un array si es igual a true y si es diferente a 0 */
+        if (is_array($datos) == true and count($datos) <> 0) {
+            foreach ($datos as $row) {
+                $output["id_usuario"] = $row["id_usuario"];
+                $output["nombre_usuario"] = $row["nombre_usuario"];
+                $output["apellido_paterno"] = $row["apellido_paterno"];
+                $output["apellido_materno"] = $row["apellido_materno"];
+                $output["correo_usuario"] = $row["correo_usuario"];
+                $output["pass_usuario"] = $row["pass_usuario"];
+                $output["sexo_usuario"] = $row["sexo_usuario"];
+                $output["telefono_usuario"] = $row["telefono_usuario"];
+                
             }
             echo json_encode($output);
         }

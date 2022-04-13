@@ -56,7 +56,7 @@ if (isset($_SESSION["id_usuario"])) {
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-control-label">Correo Electrónico: <span class="tx-danger">*</span></label>
-                                    <input class="form-control" type="text" name="correo_usuario" id="correo_usuario">
+                                    <input class="form-control" type="text" name="correo_usuario" id="correo_usuario" readonly>
                                 </div>
                             </div><!-- col-8 -->
                             <div class="col-lg-6">
@@ -90,8 +90,10 @@ if (isset($_SESSION["id_usuario"])) {
 
                 </div>
             </div>
-            <?php include_once("../html/MianJS.php") ?>
         </div>
+
+        <?php require_once("../html/MianJS.php") ?>
+        <script type="text/javascript" src="usuperfil.js"></script>
 
     </body>
 

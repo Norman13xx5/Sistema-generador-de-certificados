@@ -43,7 +43,7 @@ if (isset($_SESSION["id_usuario"])) {
                 </div><!-- row -->
             </div><!-- br-pagebody -->
         </div>
-        <?php include_once("../html/MianJS.php") ?>
+        <?php require_once("../html/MianJS.php") ?>
         <script type="text/javascript" src="usuhome.js"></script>
     </body>
 

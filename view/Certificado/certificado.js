@@ -8,7 +8,7 @@ image.src = '../../public/img/certificado.png';
 
 $(document).ready(function () {
     var id_curso_detalle = getUrlParameter('id_curso_detalle');
-    $.post("../../controller/usuario.php?op=mostrar_curso_datellate", { id_curso_detalle: id_curso_detalle }, function (data) {
+    $.post("../../controller/usuario.php?op=mostrar_curso_datalle", { id_curso_detalle: id_curso_detalle }, function (data) {
         data = JSON.parse(data);
         /*  console.log(data); */
         $('#descripcion_curso').html(data.descripcion_curso);
