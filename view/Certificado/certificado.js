@@ -45,6 +45,25 @@ $(document).ready(function () {
 
 });
 
+/* Este es el metodo para descargar el certificado en PNG */
+$(document).on("click", "#btncertificadopng", function(){
+    let lblpng = document.createElement('a');
+    /* El nombre que tendrá la descarga */
+    lblpng.download = "Certificado.png"
+    /* Aqui colocamos la ruta de lo que descargará */
+    lblpng.href = myCanvas.toDataURL();
+    lblpng.click();
+});
+
+/* Esto es para poder descargarlo en pdf, requiere de una librería que está en el index que se encuentra
+    en la carpeta Certificado al final del codigo como un script */
+$(document).on("click", "#btncertificadopdf", function(){
+    var imgData = myCanvas.toDataURL('image/png');
+    var doc = new jsPDF ('l','mm');
+    doc.addImage(imgData, 'PNG', 30, 15);
+    doc.save('Certificado.pdf')
+});
+
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),

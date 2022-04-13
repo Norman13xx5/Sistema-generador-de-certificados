@@ -18,13 +18,15 @@
             <br></br>
             <p class="tx-16 mg-b-30 text-justify" id="descripcion_curso"></p>
             <div class="form-layout-footer">
-                <button class="btn btn-info"><i class="fa fa-download mg-r-10"></i>Descargar PNG</button>
-                <button class="btn btn-danger"><i class="fa fa-download mg-r-10"></i>Descargar PDF</button>
+                <button class="btn btn-info" id="btncertificadopng"><i class="fa fa-download mg-r-10"></i>Descargar PNG</button>
+                <button class="btn btn-danger" id="btncertificadopdf"><i class="fa fa-download mg-r-10"></i>Descargar PDF</button>
             </div>
         </div>
     </div><!-- ht-100v -->
 
     <?php include_once("../html/MianJS.php") ?>
+    <!-- Librería para descargar en pdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
     <script type="text/javascript" src="certificado.js"></script>
 </body>
 
