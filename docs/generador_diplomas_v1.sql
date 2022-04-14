@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2022 at 09:49 PM
+-- Generation Time: Apr 14, 2022 at 09:39 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.28
 
@@ -42,7 +42,9 @@ CREATE TABLE `td_curso_usuario` (
 INSERT INTO `td_curso_usuario` (`id_curso_detalle`, `id_curso`, `id_usuario`, `fecha_creacion`, `estado`) VALUES
 (1, 1, 1, '2022-04-09 17:56:28', 1),
 (2, 1, 2, '2022-04-09 00:58:09', 1),
-(3, 2, 3, '2022-04-09 00:58:09', 1);
+(3, 2, 3, '2022-04-09 00:58:09', 1),
+(4, 2, 1, '2022-04-09 17:56:28', 1),
+(5, 3, 1, '2022-04-09 00:58:09', 1);
 
 -- --------------------------------------------------------
 
@@ -90,8 +92,9 @@ CREATE TABLE `tm_curso` (
 --
 
 INSERT INTO `tm_curso` (`id_curso`, `id_categoria`, `nombre_curso`, `descripcion_curso`, `fecha_inicio_curso`, `fecha_final_curso`, `id_instrutor`, `fecha_creacion`, `estado`) VALUES
-(1, 1, 'curso html5', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-04-01', '2022-04-30', 1, '2022-04-08 16:55:38', 1),
-(2, 2, 'Introducion a los negocios', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-04-01', '2022-04-30', 2, '2022-04-08 16:55:38', 1);
+(1, 1, 'Ing Informático', 'El Ingeniero Informático del Instituto Universitario de la Paz “UNIPAZ” tendrá la capacidad de diseñar, implementar, implantar, asesorar y gerenciar proyectos de TI para las organizaciones, buscando el desarrollo e innovación teniendo en cuenta la articulación adecuada entre condiciones políticas, legislativas, socioeconómicas, técnicas y ambientales del entorno, con responsabilidad disciplinar, social y ética.', '2016-04-02', '2022-04-13', 1, '2022-04-08 16:55:38', 1),
+(2, 2, 'Introducion a los negocios', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-04-01', '2022-04-30', 2, '2022-04-08 16:55:38', 1),
+(3, 2, 'PHP', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2022-04-01', '2022-04-30', 2, '2022-04-08 16:55:38', 1);
 
 -- --------------------------------------------------------
 
@@ -102,8 +105,8 @@ INSERT INTO `tm_curso` (`id_curso`, `id_categoria`, `nombre_curso`, `descripcion
 CREATE TABLE `tm_instructor` (
   `id_instrutor` int(11) NOT NULL,
   `instrutor_nombre` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
-  `apellido_paterno` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
-  `apellido_materno` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
+  `instructor_apellido_paterno` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
+  `instructor_apellido_materno` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `correo_instrutor` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `sexo_instrutor` varchar(1) COLLATE utf8_spanish_ci DEFAULT NULL,
   `telefono_instrutor` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
@@ -115,9 +118,9 @@ CREATE TABLE `tm_instructor` (
 -- Dumping data for table `tm_instructor`
 --
 
-INSERT INTO `tm_instructor` (`id_instrutor`, `instrutor_nombre`, `apellido_paterno`, `apellido_materno`, `correo_instrutor`, `sexo_instrutor`, `telefono_instrutor`, `fecha_creacion`, `estado`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin@admin.com', 'M', '555555555', '2022-04-08 23:36:04', 1),
-(2, 'admin2', 'admin2', 'admin2', 'admin2@admin.com', 'M', '666666', '2022-04-08 23:36:04', 1);
+INSERT INTO `tm_instructor` (`id_instrutor`, `instrutor_nombre`, `instructor_apellido_paterno`, `instructor_apellido_materno`, `correo_instrutor`, `sexo_instrutor`, `telefono_instrutor`, `fecha_creacion`, `estado`) VALUES
+(1, 'Oscar', 'Almeida', 'Cavanzo', 'rectoria@unipaz.edu.co	', 'M', '555555555', '2022-04-08 23:36:04', 1),
+(2, 'Asly', 'Joana', 'Chacon', 'Asly@gmail.com', 'F', '44444444', '2022-04-08 23:36:04', 1);
 
 -- --------------------------------------------------------
 
@@ -144,8 +147,8 @@ CREATE TABLE `tm_usuario` (
 
 INSERT INTO `tm_usuario` (`id_usuario`, `nombre_usuario`, `apellido_paterno`, `apellido_materno`, `correo_usuario`, `pass_usuario`, `sexo_usuario`, `telefono_usuario`, `fecha_creacion`, `estado`) VALUES
 (1, 'Brayan', 'Diaz', 'Martinez', 'brahyan.com@gmail.com', 'admin', 'M', '3182834018', '2022-04-08 16:16:35', 1),
-(2, 'Norman', 'Diaz', 'Martinez', 'brahyan.com13@outlook.es', 'cliente', 'M', '3204464813', '2022-04-08 16:16:35', 1),
-(3, 'Stiven', 'Diaz', 'Martinez', 'brahyan@gmail.com', 'usuario', 'F', '3016771485', '2022-04-08 16:16:35', 1);
+(2, 'Martín', 'Almeida', 'Cavanzo', 'martin@gmail.com', 'admin', 'M', '573107698290', '2022-04-08 16:16:35', 1),
+(3, 'Emerson', 'Machado', 'Alvarez', 'emerson@gmail.com', 'admin', 'F', '3016771485', '2022-04-08 16:16:35', 1);
 
 --
 -- Indexes for dumped tables
@@ -189,7 +192,7 @@ ALTER TABLE `tm_usuario`
 -- AUTO_INCREMENT for table `td_curso_usuario`
 --
 ALTER TABLE `td_curso_usuario`
-  MODIFY `id_curso_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_curso_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tm_categoria`
@@ -201,7 +204,7 @@ ALTER TABLE `tm_categoria`
 -- AUTO_INCREMENT for table `tm_curso`
 --
 ALTER TABLE `tm_curso`
-  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tm_instructor`
