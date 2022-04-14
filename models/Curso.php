@@ -21,6 +21,7 @@ class Curso extends Conectar
 
     public function update_curso($id_curso, $id_categoria, $nombre_curso, $descripcion_curso, $fecha_inicio_curso, $fecha_final_curso, $id_instrutor)
     {
+        $conectar = parent::conexion();
         parent::set_name();
         $sql = "UPDATE tm_curso
                 SET 
