@@ -13,6 +13,8 @@
                 </a>
                 <!-- id del usuario -->
                 <input type="hidden" id="id_usuario" value="<?php echo $_SESSION["id_usuario"] ?>">
+                <!-- id del rol -->
+                <input type="hidden" id="id_rol" value="<?php echo $_SESSION["id_rol"] ?>">
                 <div class="dropdown-menu dropdown-menu-header wd-200">
                     <ul class="list-unstyled user-profile-nav">
                         <li><a href="../UsuPerfil/index.php"><i class="icon ion-ios-gear"></i> Perfil</a></li>

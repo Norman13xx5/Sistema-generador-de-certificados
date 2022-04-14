@@ -30,6 +30,30 @@ switch ($_GET["op"]) {
         echo json_encode($results);
 
         break;
+
+        /* MicroServicio para poder mostrar el listado top 10 de cursos eb home */
+    case "listar_cursos_top10":
+        $datos = $usuario->get_cursos_x_usuario_top10($_POST["id_usuario"]);
+        $data = array();
+        foreach ($datos as $row) {
+            $sub_array = array();
+            $sub_array[] = $row["nombre_curso"];
+            $sub_array[] = $row["fecha_inicio_curso"];
+            $sub_array[] = $row["fecha_final_curso"];
+            $sub_array[] = $row["instrutor_nombre"] . " " . $row["instructor_apellido_paterno"];
+            $sub_array[] = '<button type="button" onClick="certificado(' . $row["id_curso_detalle"] . ');" id="' . $row["id_curso_detalle"] . '" class="btn btn-outline-primary btn-ico"><div><i class="fa fa-graduation-cap"></i></div></button>';
+            $data[] = $sub_array;
+        }
+
+        $results = array(
+            "sEcho" => 1,
+            "iTotalRecords" => count($data),
+            "iTotalDisplayRecords" => count($data),
+            "aaData" => $data
+        );
+        echo json_encode($results);
+
+        break;
         /*       Microservicio para mostrar informacion del certificado con el id_curso_detalle */
     case "mostrar_curso_datalle":
         $datos = $usuario->get_curso_x_id_detalle($_POST["id_curso_detalle"]);

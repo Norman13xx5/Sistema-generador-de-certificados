@@ -26,6 +26,8 @@ class Usuario extends Conectar
                     $_SESSION["nombre_usuario"] = $resultado["nombre_usuario"];
                     $_SESSION["apellido_paterno"] = $resultado["apellido_paterno"];
                     $_SESSION["correo_usuario"] = $resultado["correo_usuario"];
+                    $_SESSION["id_rol"] = $resultado["id_rol"];
+                    /* Si todo está correcto lo mandará al Home */
                     header("Location:" . Conectar::ruta() . "view/UsuHome/");
                     exit();
                 } else {
@@ -61,6 +63,38 @@ class Usuario extends Conectar
         tm_usuario ON td_curso_usuario.id_usuario = tm_usuario.id_usuario INNER JOIN
         tm_instructor ON tm_curso.id_instrutor =tm_instructor.id_instrutor
         WHERE td_curso_usuario.id_usuario = ?";
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $id_usuario);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
+
+    /* Mostrar todos los cursos en los cuales está inscrito un usuario */
+    public function get_cursos_x_usuario_top10($id_usuario)
+    {
+        $conectar = parent::conexion();
+        parent::set_name();
+        $sql = "SELECT 
+           td_curso_usuario.id_curso_detalle,
+           tm_curso.id_curso,
+           tm_curso.nombre_curso,
+           tm_curso.descripcion_curso,
+           tm_curso.fecha_inicio_curso,
+           tm_curso.fecha_final_curso,
+           tm_usuario.id_usuario,
+           tm_usuario.nombre_usuario,
+           tm_usuario.apellido_paterno,
+           tm_usuario.apellido_materno,
+           tm_instructor.id_instrutor,
+           tm_instructor.instrutor_nombre,
+           tm_instructor.instructor_apellido_paterno,
+           tm_instructor.instructor_apellido_materno
+           FROM td_curso_usuario INNER JOIN 
+           tm_curso ON td_curso_usuario.id_curso = tm_curso.id_curso INNER JOIN
+           tm_usuario ON td_curso_usuario.id_usuario = tm_usuario.id_usuario INNER JOIN
+           tm_instructor ON tm_curso.id_instrutor =tm_instructor.id_instrutor
+           WHERE td_curso_usuario.id_usuario = ?
+           LIMIT 10";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $id_usuario);
         $sql->execute();

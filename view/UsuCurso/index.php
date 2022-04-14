@@ -33,7 +33,7 @@ if (isset($_SESSION["id_usuario"])) {
                 <div class="br-section-wrapper">
                     <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">Listado de mis cursos</h6>
                     <p class="mg-b-25 mg-lg-b-50">Desde aquí podrá buscar sus cursos por certificados.</p>
-
+                    <!-- Datatable -->
                     <div class="table-wrapper">
                         <table id="datatale_cursos" class="table display responsive nowrap">
                             <thead>
@@ -41,7 +41,7 @@ if (isset($_SESSION["id_usuario"])) {
                                     <th class="wd-15p">Curso</th>
                                     <th class="wd-15p">Fecha inicio</th>
                                     <th class="wd-20p">Fecha fin</th>
-                                    <th class="wd-15p">Instructos</th>
+                                    <th class="wd-15p">Instructor</th>
                                     <th class="wd-10p"></th>
                                 </tr>
                             </thead>
@@ -50,6 +50,7 @@ if (isset($_SESSION["id_usuario"])) {
                             </tbody>
                         </table>
                     </div>
+                    <!-- Fin datatable -->
                 </div>
             </div><!-- br-pagebody -->
 
