@@ -11,8 +11,8 @@ tm_usuario.apellido_paterno,
 tm_usuario.apellido_materno,
 tm_instructor.id_instrutor,
 tm_instructor.instrutor_nombre,
-tm_instructor.apellido_paterno,
-tm_instructor.apellido_materno
+tm_instructor.apellido_paterno AS instructor_apellido_paterno,
+tm_instructor.apellido_materno As instructor_apellido_materni,
 FROM td_curso_usuario INNER JOIN 
 tm_curso ON td_curso_usuario.id_curso = tm_curso.id_curso INNER JOIN
 tm_usuario ON td_curso_usuario.id_usuario = tm_usuario.id_usuario INNER JOIN

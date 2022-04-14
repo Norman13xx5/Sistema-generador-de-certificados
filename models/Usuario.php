@@ -54,8 +54,8 @@ class Usuario extends Conectar
         tm_usuario.apellido_materno,
         tm_instructor.id_instrutor,
         tm_instructor.instrutor_nombre,
-        tm_instructor.apellido_paterno,
-        tm_instructor.apellido_materno
+        tm_instructor.instructor_apellido_paterno,
+        tm_instructor.instructor_apellido_materno
         FROM td_curso_usuario INNER JOIN 
         tm_curso ON td_curso_usuario.id_curso = tm_curso.id_curso INNER JOIN
         tm_usuario ON td_curso_usuario.id_usuario = tm_usuario.id_usuario INNER JOIN
@@ -84,8 +84,8 @@ class Usuario extends Conectar
             tm_usuario.apellido_materno,
             tm_instructor.id_instrutor,
             tm_instructor.instrutor_nombre,
-            tm_instructor.apellido_paterno,
-            tm_instructor.apellido_materno
+            tm_instructor.instructor_apellido_paterno,
+            tm_instructor.instructor_apellido_materno
             FROM td_curso_usuario INNER JOIN 
             tm_curso ON td_curso_usuario.id_curso = tm_curso.id_curso INNER JOIN
             tm_usuario ON td_curso_usuario.id_usuario = tm_usuario.id_usuario INNER JOIN

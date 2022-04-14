@@ -16,7 +16,7 @@ switch ($_GET["op"]) {
             $sub_array[] = $row["nombre_curso"];
             $sub_array[] = $row["fecha_inicio_curso"];
             $sub_array[] = $row["fecha_final_curso"];
-            $sub_array[] = $row["instrutor_nombre"] . " " . $row["apellido_paterno"];
+            $sub_array[] = $row["instrutor_nombre"] . " " . $row["instructor_apellido_paterno"];
             $sub_array[] = '<button type="button" onClick="certificado(' . $row["id_curso_detalle"] . ');" id="' . $row["id_curso_detalle"] . '" class="btn btn-outline-primary btn-ico"><div><i class="fa fa-graduation-cap"></i></div></button>';
             $data[] = $sub_array;
         }
@@ -38,7 +38,6 @@ switch ($_GET["op"]) {
             foreach ($datos as $row) {
                 $output["id_curso_detalle"] = $row["id_curso_detalle"];
                 $output["id_curso"] = $row["id_curso"];
-                $output["id_curso"] = $row["id_curso"];
                 $output["nombre_curso"] = $row["nombre_curso"];
                 $output["descripcion_curso"] = $row["descripcion_curso"];
                 $output["fecha_inicio_curso"] = $row["fecha_inicio_curso"];
@@ -49,8 +48,8 @@ switch ($_GET["op"]) {
                 $output["apellido_materno"] = $row["apellido_materno"];
                 $output["id_instrutor"] = $row["id_instrutor"];
                 $output["instrutor_nombre"] = $row["instrutor_nombre"];
-                $output["apellido_paterno"] = $row["apellido_paterno"];
-                $output["apellido_materno"] = $row["apellido_materno"];
+                $output["instructor_apellido_paterno"] = $row["instructor_apellido_paterno"];
+                $output["instructor_apellido_materno"] = $row["instructor_apellido_materno"];
             }
             echo json_encode($output);
         }

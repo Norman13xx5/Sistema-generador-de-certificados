@@ -38,7 +38,7 @@ $(document).ready(function () {
         /* Nombre del instructor */
         var x = myCanvas.width / 15;
         ctx.font = '17px League Sparta  ';
-        ctx.fillText(data.instrutor_nombre + ' ' + data.apellido_paterno + ' ' + data.apellido_materno, x, 480)
+        ctx.fillText(data.instrutor_nombre + ' ' + data.instructor_apellido_paterno + ' ' + data.instructor_apellido_materno, x, 480)
 
     });
 
