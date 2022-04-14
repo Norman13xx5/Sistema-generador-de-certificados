@@ -1,3 +1,5 @@
+var id_usuario = $('#id_usuario').val();
+
 $(document).ready(function () {
     tabla = $('#datatale_cursos').DataTable({
         "aProcessing": true,//Activamos el procesamiento del datatables
@@ -7,13 +9,13 @@ $(document).ready(function () {
             'copyHtml5',
             'excelHtml5',
             'csvHtml5',
-         /* Aquí llamamos del controlador los datos que queremos pintar en la datatable */
+            /* Aquí llamamos del controlador los datos que queremos pintar en la datatable */
         ],
         "ajax": {
             url: "../../controller/usuario.php?op=listar_cursos",
             type: "post",
-            data: {id_usuario:1},
-        }, 
+            data: { id_usuario : id_usuario },
+        },
         "bDestroy": true,
         "responsive": true,
         "bInfo": true,
@@ -46,6 +48,6 @@ $(document).ready(function () {
     });
 });
 
-function certificado(id_curso_detalle){
-    window.open('../Certificado/index.php?id_curso_detalle='+ id_curso_detalle +'','_blank');
+function certificado(id_curso_detalle) {
+    window.open('../Certificado/index.php?id_curso_detalle=' + id_curso_detalle + '', '_blank');
 }
