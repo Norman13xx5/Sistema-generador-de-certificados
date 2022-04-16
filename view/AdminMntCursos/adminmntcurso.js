@@ -2,6 +2,13 @@ var id_usuario = $('#id_usuario').val();
 
 $(document).ready(function () {
 
+    $('#id_categoria').select2({
+        dropdownParent: $('#modalnadminmntcurso')
+    });
+    $.post("../../controller/categoria.php?op=combo_categoria", function (data) {
+        $('#id_categoria').html(data);
+    });
+
     tabla = $('#mnt_cursos').DataTable({
         "aProcessing": true,//Activamos el procesamiento del datatables
         "aServerSide": true,//Paginación y filtrado realizados por el servidor
@@ -46,13 +53,18 @@ $(document).ready(function () {
             }
         },
     });
+
 });
 
-function Editar(id_curso){
+function Editar(id_curso) {
     console.log(id_curso);
 }
 
-function Eliminar(id_curso){
+function Eliminar(id_curso) {
     console.log(id_curso);
 
+}
+
+function nuevo_curso() {
+    $('#modalnadminmntcurso').modal('show');
 }

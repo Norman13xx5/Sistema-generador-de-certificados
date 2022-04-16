@@ -32,8 +32,7 @@ if (isset($_SESSION["id_usuario"])) {
                 <div class="br-section-wrapper">
                     <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">Cursos</h6>
                     <p class="mg-b-30 tx-gray-600">Listado de Cursos</p>
-
-                    <button class="btn btn-outline-primary" id="add_button" onclick="newregistro()"><i class="fa fa-plus-square mg-r-10"></i>Agregar Registro</button>
+                    <button type="button" class="btn btn-outline-primary" id="add_button" onclick="nuevo_curso()"><i class="fa fa-plus-square mg-r-10"></i>Agregar Registro</button>
                     <p></p>
                     <!-- Tabla -->
                         <!-- Datatable -->
@@ -61,6 +60,7 @@ if (isset($_SESSION["id_usuario"])) {
             </div>
         </div>
 
+        <?php require_once("modanadminmntcurso.php") ?>
         <?php require_once("../html/MianJS.php") ?>
         <script type="text/javascript" src="adminmntcurso.js"></script>
 
