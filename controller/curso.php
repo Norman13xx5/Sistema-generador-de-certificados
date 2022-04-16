@@ -54,18 +54,17 @@ switch ($_GET["op"]) {
         break;
     /* Listar toda la información segun el formato de datatable */
     case "listar":
-        $datos = $curso->get_curso());
+        $datos = $curso->get_curso();
         $data = array();
         foreach ($datos as $row) {
             $sub_array = array();
             $sub_array[] = $row["id_categoria"];
             $sub_array[] = $row["nombre_curso"];
-            $sub_array[] = $row["descripcion_curso"];
             $sub_array[] = $row["fecha_inicio_curso"];
             $sub_array[] = $row["fecha_final_curso"];
             $sub_array[] = $row["id_instrutor"];
-            $sub_array[] = '<button type="button" onClick="Editar(' . $row["id_curso"] . ');" id="' . $row["id_curso"] . '" class="btn btn-outline-warning btn-ico"><div><i class="fa fa-graduation-cap"></i></div></button>';
-            $sub_array[] = '<button type="button" onClick="Eliminar(' . $row["id_curso"] . ');" id="' . $row["id_curso"] . '" class="btn btn-outline-danger btn-ico"><div><i class="fa fa-graduation-cap"></i></div></button>';
+            $sub_array[] = '<button type="button" onClick="Editar(' . $row["id_curso"] . ');" id="' . $row["id_curso"] . '" class="btn btn-outline-warning btn-ico"><div><i class="fa fa-edit"></i></div></button>';
+            $sub_array[] = '<button type="button" onClick="Eliminar(' . $row["id_curso"] . ');" id="' . $row["id_curso"] . '" class="btn btn-outline-danger btn-ico"><div><i class="fa fa-close"></i></div></button>';
             $data[] = $sub_array;
         }
 
