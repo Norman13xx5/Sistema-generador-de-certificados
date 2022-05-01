@@ -5,8 +5,17 @@ $(document).ready(function () {
     $('#id_categoria').select2({
         dropdownParent: $('#modalnadminmntcurso')
     });
+
+    $('#id_instrutor').select2({
+        dropdownParent: $('#modalnadminmntcurso')
+    });
+
     $.post("../../controller/categoria.php?op=combo_categoria", function (data) {
         $('#id_categoria').html(data);
+    });
+
+    $.post("../../controller/instructor.php?op=combo_instructor", function (data) {
+        $('#id_instrutor').html(data);
     });
 
     tabla = $('#mnt_cursos').DataTable({

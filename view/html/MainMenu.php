@@ -1,5 +1,5 @@
     <!-- ########## START: LEFT PANEL ########## -->
-    <div class="br-logo"><a href="../UsuHome/index.php"><span>[</span>Empresa de Jal<span>]</span></a></div>
+    <div class="br-logo"><a href="../UsuHome/index.php"><span>[</span>- Empresa -<span>]</span></a></div>
 
     <div class="br-sideleft overflow-y-auto">
         <label class="sidebar-label pd-x-15 mg-t-20">MENU</label>
